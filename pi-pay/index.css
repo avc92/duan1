@@ -1,0 +1,242 @@
+:root {
+  --pi-purple: #583595;
+  --pi-dark-bg: #1A1A2E;
+  --pi-card-bg: #162447;
+  --pi-gold: #F2A900;
+  --text-light: #E0E0E0;
+  --text-white: #FFFFFF;
+  --text-gray: #A9A9A9;
+  --send-red: #E94560;
+  --receive-green: #1BC5BD;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--pi-dark-bg);
+  color: var(--text-light);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+#root {
+  width: 100%;
+  max-width: 420px;
+}
+
+.wallet-container {
+  background-color: var(--pi-card-bg);
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  border: 1px solid var(--pi-purple);
+}
+
+.wallet-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wallet-header h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-white);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pi-logo {
+  font-size: 1.8rem;
+  color: var(--pi-gold);
+}
+
+.balance-section {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+}
+
+.balance-label {
+  font-size: 0.9rem;
+  color: var(--text-gray);
+  margin-bottom: 0.5rem;
+}
+
+.balance-amount {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-white);
+  letter-spacing: 1px;
+}
+
+.balance-amount span {
+  font-weight: 500;
+  color: var(--pi-gold);
+}
+
+.balance-usd {
+  font-size: 1rem;
+  color: var(--text-gray);
+  margin-top: 0.25rem;
+  font-weight: 500;
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.action-button {
+  background-color: var(--pi-purple);
+  color: var(--text-white);
+  border: none;
+  border-radius: 12px;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.action-button:hover {
+  background-color: #6a44a9;
+}
+
+.action-button:active {
+  transform: scale(0.98);
+}
+
+.action-button.send {
+  background-color: var(--pi-gold);
+  color: var(--pi-dark-bg);
+}
+.action-button.send:hover {
+    background-color: #ffbe33;
+}
+
+.transactions-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.transactions-header {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-white);
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.transaction-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-height: 250px;
+  overflow-y: auto;
+  padding-right: 0.5rem; /* for scrollbar */
+}
+
+/* Custom Scrollbar */
+.transaction-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.transaction-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.transaction-list::-webkit-scrollbar-thumb {
+  background-color: var(--pi-purple);
+  border-radius: 10px;
+}
+
+.transaction-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+}
+
+.transaction-details {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.transaction-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.transaction-icon.sent {
+  background-color: rgba(233, 69, 96, 0.2);
+  color: var(--send-red);
+}
+
+.transaction-icon.received {
+  background-color: rgba(27, 197, 189, 0.2);
+  color: var(--receive-green);
+}
+
+.transaction-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.transaction-info .type {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-light);
+}
+
+.transaction-info .address {
+  font-size: 0.8rem;
+  color: var(--text-gray);
+  font-family: monospace;
+}
+
+.transaction-amount {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.transaction-amount.sent {
+  color: var(--send-red);
+}
+
+.transaction-amount.received {
+  color: var(--receive-green);
+}
+
+.footer {
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--text-gray);
+    margin-top: 1rem;
+}

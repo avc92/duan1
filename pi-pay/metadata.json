@@ -1,0 +1,5 @@
+{
+  "name": "Pi Pay",
+  "description": "Một ví an toàn cho Mạng Pi, được cung cấp bởi Pi Core Team.",
+  "requestFramePermissions": []
+}
